@@ -1,8 +1,11 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import '../Styles/Blog.css'
 import JoditEditor from 'jodit-react'
+import axios from 'axios'
+import { useNavigate } from 'react-router'
 const Blog = () => {
 
+    const navigate =useNavigate()
     const editor = useRef(null)
     // console.log(editor)
     
@@ -22,14 +25,18 @@ const Blog = () => {
         setTitle((prev) => ({ ...prev, desc: value }));
     }, []);
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=async(e)=>{
         e.preventDefault()
+        const res = await axios.post('http://localhost:5000/blogs',title)
+        console.log('data added successfully')
+        navigate('/home')
         setBlogData((prev)=>[...prev, title])
         setTitle({
             title:'',
             desc:''
         })
     }
+
   return (
     <>
         <div className='blog-post'>
@@ -44,6 +51,7 @@ const Blog = () => {
                 </div>
             </form>
         </div>
+        
         
     </>
   )
