@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Barlow+Condensed:wght@300&family=Hedvig+Letters+Sans&family=Kanit:ital,wght@0,900;1,800&family=Mulish:wght@600;800&family=Open+Sans:wght@800&family=Pacifico&family=Pathway+Gothic+One&family=Poppins:wght@200&family=Rajdhani:wght@300&family=Roboto:wght@300&family=Rubik+Doodle+Shadow&family=Rubik:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.register-page {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .register-page {
+        max-width: 300px;
+    }
+
+
+    .register-page label,
+    .register-page input {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
